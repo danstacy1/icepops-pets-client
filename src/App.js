@@ -47,42 +47,54 @@ const msgAlert = ({ heading, message, variant }) => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+				<Route 
+					path='/' 
+					element={<Home msgAlert={msgAlert} 
+					user={user} />} 
+				/>
 				<Route
 					path='/sign-up'
-					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+					element={<SignUp msgAlert={msgAlert} 
+					setUser={setUser} />}
 				/>
 				<Route
 					path='/sign-in'
-					element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+					element={<SignIn 
+					msgAlert={msgAlert} 
+					setUser={setUser} />}
 				/>
-		<Route
-		path='/sign-out'
-		element={
-			<RequireAuth user={user}>
-			<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-			</RequireAuth>
-		}
-		/>
-		<Route
-		path='/change-password'
-		element={
-			<RequireAuth user={user}>
-			<ChangePassword msgAlert={msgAlert} user={user} />
-			</RequireAuth>}
-		/>
-		<Route
-					path="/pets/:id"
-					element={ <ShowPet user={ user } msgAlert={ msgAlert } />}				/>
-			<Route
-				path="/addPet"
-				element={
-					<RequireAuth user={ user }>
-						<CreatePet msgAlert={msgAlert} user={user} />
-					</RequireAuth>  
-				}
-			/>
-	</Routes>
+				<Route
+					path='/sign-out'
+					element={
+					<RequireAuth user={user}>
+						<SignOut msgAlert={msgAlert} 
+						clearUser={clearUser} 
+						user={user} />
+					</RequireAuth>
+					}
+				/>
+				<Route
+					path='/change-password'
+					element={
+					<RequireAuth user={user}>
+						<ChangePassword msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+				/>
+				<Route
+						path="/pets/:id"
+						element={ <ShowPet 
+						user={ user } 
+						msgAlert={ msgAlert } />}				/>
+				<Route
+						path="/addPet"
+						element={
+							<RequireAuth user={ user }>
+								<CreatePet msgAlert={msgAlert} user={user} />
+							</RequireAuth>  
+						}
+					/>
+			</Routes>
+			
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
 					key={msgAlert.id}
