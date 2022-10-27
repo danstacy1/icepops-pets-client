@@ -81,18 +81,19 @@ const msgAlert = ({ heading, message, variant }) => {
 					</RequireAuth>}
 				/>
 				<Route
-						path="/pets/:id"
-						element={ <ShowPet 
-						user={ user } 
-						msgAlert={ msgAlert } />}				/>
+					path="/pets/:id"
+					element={ <ShowPet 
+					user={ user } 
+					msgAlert={ msgAlert } />}				
+				/>
 				<Route
-						path="/addPet"
-						element={
-							<RequireAuth user={ user }>
-								<CreatePet msgAlert={msgAlert} user={user} />
-							</RequireAuth>  
-						}
-					/>
+					path="/addPet"
+					element={
+						<RequireAuth user={ user }>
+							<CreatePet msgAlert={msgAlert} user={user} />
+						</RequireAuth>  
+					}
+				/>
 			</Routes>
 			
 			{msgAlerts.map((msgAlert) => (

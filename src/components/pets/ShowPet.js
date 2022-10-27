@@ -31,6 +31,7 @@ const ShowPet = (props) => {
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
+    // destructuring to get the id value from our route parameters in App.js
     const navigate = useNavigate()
     // useNavigate returns a function
     // we can call that function to redirect the user wherever we want to
