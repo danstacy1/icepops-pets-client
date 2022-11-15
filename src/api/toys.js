@@ -34,8 +34,4 @@ export const deleteToy = (user, petId, toyId) => {
 			Authorization: `Token token=${user.token}`,
 		}
 	})
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> origin/main
