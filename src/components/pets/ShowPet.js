@@ -31,6 +31,10 @@ const ShowPet = (props) => {
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
+<<<<<<< HEAD
+=======
+    // destructuring to get the id value from our route parameters in App.js
+>>>>>>> origin/main
     const navigate = useNavigate()
     // useNavigate returns a function
     // we can call that function to redirect the user wherever we want to
@@ -81,7 +85,11 @@ const ShowPet = (props) => {
     if (pet) {
         if (pet.toys.length > 0) {
             toyCards = pet.toys.map(toy => (
+<<<<<<< HEAD
                 <ShowToy 
+=======
+                <ShowToy
+>>>>>>> origin/main
                     key={toy._id}
                     toy={toy}
                     pet={pet}

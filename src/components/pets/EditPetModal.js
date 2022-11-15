@@ -4,10 +4,14 @@ import PetForm from '../shared/PetForm'
 import { updatePetSuccess, updatePetFailure } from '../shared/AutoDismissAlert/messages'
 
 const EditPetModal = (props) => {
+<<<<<<< HEAD
     const { 
         user, show, handleClose, 
         updatePet, msgAlert, triggerRefresh
     } = props
+=======
+    const { user, show, handleClose, updatePet, msgAlert, triggerRefresh } = props
+>>>>>>> origin/main
 
     const [pet, setPet] = useState(props.pet)
 

@@ -13,7 +13,11 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPet from './components/pets/ShowPet'
+<<<<<<< HEAD
 // import PetForm from './components/shared/PetForm'
+=======
+import PetForm from './components/shared/PetForm'
+>>>>>>> origin/main
 import CreatePet from './components/pets/CreatePet'
 
 const App = () => {
@@ -47,15 +51,54 @@ const msgAlert = ({ heading, message, variant }) => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+				<Route 
+					path='/' 
+					element={<Home msgAlert={msgAlert} 
+					user={user} />} 
+				/>
 				<Route
 					path='/sign-up'
-					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+					element={<SignUp msgAlert={msgAlert} 
+					setUser={setUser} />}
 				/>
 				<Route
 					path='/sign-in'
-					element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+					element={<SignIn 
+					msgAlert={msgAlert} 
+					setUser={setUser} />}
 				/>
+				<Route
+					path='/sign-out'
+					element={
+					<RequireAuth user={user}>
+						<SignOut msgAlert={msgAlert} 
+						clearUser={clearUser} 
+						user={user} />
+					</RequireAuth>
+					}
+				/>
+				<Route
+					path='/change-password'
+					element={
+					<RequireAuth user={user}>
+						<ChangePassword msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+				/>
+				<Route
+					path="/pets/:id"
+					element={ <ShowPet 
+					user={ user } 
+					msgAlert={ msgAlert } />}				
+				/>
+				<Route
+					path="/addPet"
+					element={
+						<RequireAuth user={ user }>
+							<CreatePet msgAlert={msgAlert} user={user} />
+						</RequireAuth>  
+					}
+				/>
+<<<<<<< HEAD
 				<Route
 				path='/sign-out'
 				element={
@@ -83,7 +126,10 @@ const msgAlert = ({ heading, message, variant }) => {
 						</RequireAuth>  
 					}
 				/>
+=======
+>>>>>>> origin/main
 			</Routes>
+			
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
 					key={msgAlert.id}
