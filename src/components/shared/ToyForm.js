@@ -33,8 +33,8 @@ const ToyForm = (props) => {
                 <Form.Select 
                     aria-label="toy condition"
                     name="condition"
-                    defaultValue={ toy.condition }
-                    onChange={ handleChange }
+                    defaultValue={toy.condition}
+                    onChange={handleChange}
                 >
                     <option>Open this select menu</option>
                     <option value="new">new</option>

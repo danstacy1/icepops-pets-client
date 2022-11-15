@@ -13,67 +13,53 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPet from './components/pets/ShowPet'
-<<<<<<< HEAD
-// import PetForm from './components/shared/PetForm'
-=======
-import PetForm from './components/shared/PetForm'
->>>>>>> origin/main
 import CreatePet from './components/pets/CreatePet'
 
 const App = () => {
 
-const [user, setUser] = useState(null)
-const [msgAlerts, setMsgAlerts] = useState([])
+  const [user, setUser] = useState(null)
+  const [msgAlerts, setMsgAlerts] = useState([])
 
-console.log('user in app', user)
-console.log('message alerts', msgAlerts)
-const clearUser = () => {
-console.log('clear user ran')
-setUser(null)
-}
+  console.log('user in app', user)
+  console.log('message alerts', msgAlerts)
+  const clearUser = () => {
+    console.log('clear user ran')
+    setUser(null)
+  }
 
-const deleteAlert = (id) => {
-	setMsgAlerts((prevState) => {
-		return (prevState.filter((msg) => msg.id !== id) )
-	})
-}
+	const deleteAlert = (id) => {
+		setMsgAlerts((prevState) => {
+			return (prevState.filter((msg) => msg.id !== id) )
+		})
+	}
 
-const msgAlert = ({ heading, message, variant }) => {
-	const id = uuid()
-	setMsgAlerts(() => {
-		return (
-			[{ heading, message, variant, id }]
-	)
-	})
-}
+	const msgAlert = ({ heading, message, variant }) => {
+		const id = uuid()
+		setMsgAlerts(() => {
+			return (
+				[{ heading, message, variant, id }]
+      )
+		})
+	}
 
 	return (
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route 
-					path='/' 
-					element={<Home msgAlert={msgAlert} 
-					user={user} />} 
-				/>
+				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 				<Route
 					path='/sign-up'
-					element={<SignUp msgAlert={msgAlert} 
-					setUser={setUser} />}
+					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
 				/>
 				<Route
 					path='/sign-in'
-					element={<SignIn 
-					msgAlert={msgAlert} 
-					setUser={setUser} />}
+					element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 				/>
 				<Route
 					path='/sign-out'
 					element={
 					<RequireAuth user={user}>
-						<SignOut msgAlert={msgAlert} 
-						clearUser={clearUser} 
-						user={user} />
+						<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
 					</RequireAuth>
 					}
 				/>
@@ -86,50 +72,17 @@ const msgAlert = ({ heading, message, variant }) => {
 				/>
 				<Route
 					path="/pets/:id"
-					element={ <ShowPet 
-					user={ user } 
-					msgAlert={ msgAlert } />}				
+					element={ <ShowPet user={ user } msgAlert={ msgAlert } />}
 				/>
 				<Route
 					path="/addPet"
 					element={
 						<RequireAuth user={ user }>
-							<CreatePet msgAlert={msgAlert} user={user} />
+							<CreatePet msgAlert={msgAlert} user={user}/>
 						</RequireAuth>  
 					}
 				/>
-<<<<<<< HEAD
-				<Route
-				path='/sign-out'
-				element={
-					<RequireAuth user={user}>
-					<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-					</RequireAuth>
-				}
-				/>
-				<Route
-				path='/change-password'
-				element={
-					<RequireAuth user={user}>
-					<ChangePassword msgAlert={msgAlert} user={user} />
-					</RequireAuth>}
-				/>
-				<Route
-							path="/pets/:id"
-							element={ <ShowPet user={ user } msgAlert={ msgAlert } />}				
-				/>
-				<Route
-					path="/addPet"
-					element={
-						<RequireAuth user={ user }>
-							<CreatePet msgAlert={msgAlert} user={user} />
-						</RequireAuth>  
-					}
-				/>
-=======
->>>>>>> origin/main
 			</Routes>
-			
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
 					key={msgAlert.id}

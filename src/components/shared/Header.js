@@ -9,7 +9,7 @@ const linkStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
-			<Link to="/addPet" style={ linkStyle }>
+			<Link to='/addPet' style={linkStyle}>
 				Add a Pet
 			</Link>
 		</Nav.Item>
@@ -50,7 +50,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
-		<Navbar.Brand classname="m-2">
+		<Navbar.Brand className='m-2'>
             <Link to='/' style={linkStyle}>
                 Pets
             </Link>

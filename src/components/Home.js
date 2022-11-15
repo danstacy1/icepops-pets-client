@@ -9,7 +9,7 @@ const Home = (props) => {
 	return (
 		<>
 			<h2>See the Pets</h2>
-			<PetsIndex msgAlert={ msgAlert }/>
+			<PetsIndex msgAlert={ msgAlert } />
 		</>
 	)
 }

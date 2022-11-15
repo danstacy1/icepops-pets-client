@@ -1,7 +1,12 @@
-import { Form, Button, Container } from 'react-bootstrap'
+import { 
+    Form,
+    Button,
+    Container 
+} from 'react-bootstrap'
 
 const PetForm = (props) => {
     const { pet, handleChange, heading, handleSubmit } = props
+
     return (
         <Container className="justify-content-center">
             <h3>{heading}</h3>

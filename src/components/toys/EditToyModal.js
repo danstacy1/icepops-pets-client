@@ -10,7 +10,7 @@ const EditToyModal = (props) => {
     } = props
 
     const [toy, setToy] = useState(props.toy)
-    console.log('this is the toy in the update modal', toy)
+
     const handleChange = (e) => {
         setToy(prevToy => {
             let value = e.target.value

@@ -9,6 +9,7 @@ const ShowToy = (props) => {
 
     // here's where we'll put a hook to open the edit toy modal when we get there
     const [editModalShow, setEditModalShow] = useState(false)
+
     // this will set a color depending on the toy's condition
     const setBgCondition = (cond) => {
         if (cond === 'new') {
@@ -57,13 +58,14 @@ const ShowToy = (props) => {
                             <Button 
                                 variant="warning"
                                 onClick={() => setEditModalShow(true)}
-                                >Edit Toy
+                            >
+                                Edit Toy
                             </Button>
-
                             <Button 
                                 onClick={() => destroyToy()} 
                                 variant="danger"
-                                >Delete Toy
+                            >
+                                Delete Toy
                             </Button>
                         </>
                         :
