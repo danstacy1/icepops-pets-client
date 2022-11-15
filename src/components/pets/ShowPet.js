@@ -81,7 +81,7 @@ const ShowPet = (props) => {
     if (pet) {
         if (pet.toys.length > 0) {
             toyCards = pet.toys.map(toy => (
-                <ShowToy
+                <ShowToy 
                     key={toy._id}
                     toy={toy}
                     pet={pet}
